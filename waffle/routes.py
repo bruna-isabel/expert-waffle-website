@@ -1,8 +1,8 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from user_auth import Registration, LogIn
-app = Flask(__name__)
+from flask import render_template, url_for, flash, redirect
+from waffle.user_auth import Registration, LogIn
+from waffle import app
+from waffle.models import User, Post
 
-app.config['SECRET_KEY'] = 'fc940bf3ec2d1c7abcb30ee54093ebdd' #Security Method
 
 posts = [
     {
@@ -26,13 +26,13 @@ def homepage():
 
 @app.route('/about')
 def about():
-    return render_template('aboutpage.html', title='About')
+    return render_template('about.html', title='About')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = Registration()
     if form.validate_on_submit():
-        flash(f'Welcome {form.username.data}!', 'success')
+        flash(f'Welcome {form.username.data}', 'success')
         print("Validatin")
         return redirect(url_for('homepage'))
     
@@ -48,9 +48,3 @@ def login():
         else:
             flash('Login Unsuccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Log In', form=form)
-
-#Allows to run module directly instead of using flask run
-#Whenever we shut down terminal, we don't have to set
-# environment variables again 
-if __name__ == '__main__':
-    app.run(debug=True)

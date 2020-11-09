@@ -15,10 +15,10 @@ class Registration(FlaskForm):
 
 class LogIn(FlaskForm):
 
-    email = StringField('email', validators=[DataRequired(), Email()])
-    password = PasswordField('password', validators=[DataRequired(), Length(min=4, max=12)])
-    remember = BooleanField('remember me')
-    submit = SubmitField('log in')
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=4, max=12)])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')
 
 
 
