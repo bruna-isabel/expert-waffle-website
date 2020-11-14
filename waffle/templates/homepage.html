@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
 {% block content%}
+<div class='content-section'>  
     {% for post in posts%}
-    <h1>{{ post.title }}</h1>
-    <p> By {{post.author}} on {{post.date_posted}} </p>
+    <h1><a class="article-title" href="{{url_for('post', post_id=post.id)}}">{{ post.title }}</a></h1>
+    <p> Asked by {{post.author.username}} on {{post.date_posted.strftime('%d-%m-%Y')}} </p>
     <p> {{post.content }} </p>
     {% endfor %}
+<div> 
 {% endblock content%}

@@ -1,31 +1,32 @@
 .body {
-  background-color: rgb(14, 9, 58);
+  background-color: rgb(41, 49, 66);
+  color: rgb(41, 49, 66);
 }
 
-h1, h2, h3, p {
-  color :rgb(155, 186, 226);;
+h1, h2, h3, p, legend, label {
+  color:rgb(147, 173, 209);
 
 }
+
+
+.navbar{
+    background-color: rgb(18, 26, 36) !important;
+  }
 
 .container {
   margin-top: 2em;
 }
 
-.navbar{
-    background-color: rgb(77, 130, 201) !important;
-  }
-
 .content-section {
-
-  background: rgb(77, 130, 201);
+  background:rgb(18, 26, 36);
   padding: 20px 20px;
   margin-bottom: 20px;
-  border: 1px solid rgb(56, 96, 148);
-  border-radius: 3px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .btn {
-  color: black;
+  color: rgb(147, 173, 209);
   
 }
 
